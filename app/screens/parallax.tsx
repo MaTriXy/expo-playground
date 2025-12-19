@@ -201,7 +201,7 @@ export default function ParallaxScreen() {
                                 </View>
                                 
                                 <Animated.View className="items-center justify-center">
-                                    <Text className="text-2xl mt-4 text-text">{item.title}</Text>
+                                    <Text className="text-2xl font-bold mt-4 text-text">{item.title}</Text>
                                     <Text className="text-center text-text opacity-50 mt-2">{item.description}</Text>
                                 </Animated.View>
                             </View>
@@ -217,7 +217,7 @@ export default function ParallaxScreen() {
                     {slides.map((_, index) => (
                         <View
                             key={index}
-                            className={`h-2 mx-1 rounded-full ${index === currentIndex ? 'bg-highlight w-2' : 'bg-secondary w-2'}`}
+                            className={`h-2 mx-1 rounded-full ${index === currentIndex ? 'bg-highlight w-2' : 'bg-neutral-400 w-2'}`}
                         />
                     ))}
                 </View>
@@ -225,10 +225,10 @@ export default function ParallaxScreen() {
                 {/* Login/Signup Buttons */}
                 <View className="w-full px-6 mb-global flex flex-col space-y-2">
                     <View className='flex flex-row items-center justify-center gap-2'>
-                        <Pressable onPress={() => router.push('/(drawer)/(tabs)')} className='flex-1 border border-black dark:border-white rounded-full flex flex-row items-center justify-center py-4'>
+                        <Pressable onPress={() => router.push('/(drawer)/(tabs)')} className='flex-1 border border-border rounded-full flex flex-row items-center justify-center py-4'>
                             <AntDesign name="google" size={22} color={colors.text} />
                         </Pressable>
-                        <Pressable onPress={() => router.push('/screens/signup')} className='flex-1 w-1/4 bg-secondary rounded-full flex flex-row items-center justify-center py-4'>
+                        <Pressable onPress={() => router.push('/screens/signup')} className='flex-1 w-1/4 bg-text rounded-full flex flex-row items-center justify-center py-4'>
                             <Feather name="mail" size={20} color={colors.invert} />
                         </Pressable>
                         <Pressable onPress={() => router.push('/(drawer)/(tabs)')} className='flex-1 border border-black border-border rounded-full flex flex-row items-center justify-center py-4'>
