@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Pressable, Animated } from 'react-native';
 import { useTheme } from 'app/contexts/ThemeContext';
 import Feather from '@expo/vector-icons/Feather';
@@ -11,9 +11,9 @@ interface ThemeToggleProps {
 
 const ThemeToggle: React.FC<ThemeToggleProps> = ({ value, onChange }) => {
   const colors = useThemeColors();
-  const { isDark, toggleTheme } = useTheme();
-  const [scale] = useState(new Animated.Value(1)); // Initial scale value
-  const [rotate] = useState(new Animated.Value(0)); // Initial rotate value
+  const { theme, toggleTheme } = useTheme();
+  const scale = useRef(new Animated.Value(1)).current;
+  const rotate = useRef(new Animated.Value(0)).current;
   const [isAnimating, setIsAnimating] = useState(false);
 
   const animateIcon = () => {
@@ -58,7 +58,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ value, onChange }) => {
     animateIcon();
   };
 
-  const isActive = value !== undefined ? value : isDark;
+  const isActive = value !== undefined ? value : theme === 'dark';
 
   return (
     <Pressable onPress={handlePress}>

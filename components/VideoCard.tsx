@@ -142,7 +142,6 @@ export default function VideoCard({
                         <VideoView
                             player={player}
                             style={{ width: '100%', height: 500, transform: [{ scale: 1.5 }] }}
-                            allowsFullscreen
                             nativeControls={false}
                         />
                     </Animated.View>

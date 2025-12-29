@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import { View, Text, Pressable } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import Feather from '@expo/vector-icons/Feather';
 import useThemeColors from '@/app/contexts/ThemeColors';
 
