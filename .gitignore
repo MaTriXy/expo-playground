@@ -10,6 +10,8 @@ web-build/
 *.hbc.map
 *.js.map
 *.swp
+android/
+ios/
 
 # OS specific
 .DS_Store
